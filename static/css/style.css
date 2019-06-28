@@ -1,0 +1,34 @@
+.custom-input {
+    width: 50%;
+    padding: 0.5rem;
+    padding-left: 20px;
+    margin-bottom: 0.5rem;
+    border: solid rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    outline: none;
+}
+
+.custom-input:hover {
+    box-shadow: 0 0 11px !important;
+}
+
+.custom-input-label {
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.index-a {
+    color: black;
+}
+
+.btn {
+    padding: 5px 40px;
+}
+
+.index-a:hover {
+    color: gray;
+}

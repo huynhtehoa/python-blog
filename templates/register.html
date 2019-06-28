@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<h1>Register Now</h1>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col text-center">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <br>
+            {{ form.username.label(class="custom-input-label") }} <br> {{ form.username(class="custom-input") }}
+            <br>
+            {{ form.email.label(class="custom-input-label") }} <br> {{ form.email(class="custom-input") }}
+            <br>
+            {{ form.password.label(class="custom-input-label") }} <br> {{ form.password(class="custom-input") }}
+            <br>
+            {{ form.pass_confirm.label(class="custom-input-label") }} <br> {{ form.pass_confirm(class="custom-input") }}
+            <br>
+            {{ form.submit(class="btn btn-outline-dark mt-2") }}
+        </form>
+    </div>
+</div>
+{% endblock %}

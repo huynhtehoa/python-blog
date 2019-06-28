@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="row text-center" style="margin-top: 300px">
+    <div class="col-12">
+        <a class="btn btn-lg btn-outline-dark" href="{{ url_for('register') }}" role="button">REGISTER NOW</a>
+    </div>
+    <div class="col-12">
+        <small>Already have an account? <i><b><a class="index-a" href="{{ url_for('login') }}">Login now</a></i></b></small>
+    </div>
+</div>
+{% endblock %}

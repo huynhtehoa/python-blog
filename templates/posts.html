@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+<h1>All Posts</h1>
+{% endblock %}
+
+{% block body %}
+{% for post in posts[::-1] %}
+<div class="row py-2">
+    <div class="col">
+        <div class="card">
+            <ul class="card-header d-flex list-unstyled">
+                <li>
+                    <h5>{{ post.title }}</h5>
+                    <footer class="blockquote-footer">
+                        Author:
+                        <cite title="{{ post.author_name }}">
+                            {{ post.author_name }}
+                        </cite>
+                    </footer>
+                </li>
+                {% if current_user.username == post.author_name %}
+                <li class="ml-auto px-2"><a href="{{ url_for('update', post_id=post.id) }}">Edit</a></li>
+                <li><a href="{{ url_for('delete', post_id=post.id) }}">Delete</a></li>
+                {% endif %}
+            </ul>
+            <div class="card-body">
+                <p class="card-text">{{ post.body|safe }}</p>
+            </div>
+            <small>
+                <ul class="card-footer text-muted d-flex list-unstyled m-0">
+                    <li>Created on: <i>{{ post.created_on.strftime("%m/%d/%Y, %H:%M") }}</i></li>
+                    {% if not post.updated_on %}
+                    <li class="ml-auto">Updated on: <i>No update</i></li>
+                    {% else %}
+                    <li class="ml-auto">Updated on: <i>{{ post.updated_on.strftime("%m/%d/%Y, %H:%M") }}</i></li>
+                    {% endif %}
+                </ul>
+            </small>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
